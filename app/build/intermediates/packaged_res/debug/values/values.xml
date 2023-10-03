@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_theme">#009dff</color>
+    <color name="app_theme_light">#f6fbff</color>
+    <color name="black">#FF000000</color>
+    <color name="edit_text_background">#f6fbff</color>
+    <color name="edit_text_border">#03A9F4</color>
+    <color name="error">#ee3333</color>
+    <color name="gray">#808080</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">MedTracker</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name="Base.Theme.MedTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.MedTracker" parent="Base.Theme.MedTracker"/>
+    <style name="custom_card_view" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">48dp</item>
+        <item name="cornerSizeTopLeft">48dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+    <style name="custom_card_view_style" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/custom_card_view</item>
+    </style>
+</resources>
