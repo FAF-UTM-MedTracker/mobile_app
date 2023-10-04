@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.medtracker.app-mergeDebugResources-45:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.example.medtracker.app-mergeDebugResources-46:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\RandomNick\\.gradle\\caches\\transforms-3\\60c55cbef2e6cdef5b8f3b785c00f588\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "/Users/air/.gradle/caches/transforms-3/60c55cbef2e6cdef5b8f3b785c00f588/transformed/appcompat-1.6.1/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

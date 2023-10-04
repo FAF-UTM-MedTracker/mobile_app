@@ -1,15 +1,22 @@
 package com.example.medtracker
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.medtracker.api.ApiManager
+import com.example.medtracker.api.YourResponseModel
+import com.example.medtracker.data.LoginData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 /**
  * A simple [Fragment] subclass.
@@ -18,6 +25,7 @@ import androidx.navigation.Navigation
  */
 class LogInFragment : Fragment() {
     private lateinit var navController: NavController
+    val apiService = ApiManager.apiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,38 +43,61 @@ class LogInFragment : Fragment() {
         val loginBtn = getView()?.findViewById<View>(R.id.button) as Button
         loginBtn.setOnClickListener {
 
-            if(checkInput(view)){
-                //TODO: Call the API with the provided mail & password, await response
-                //If response positive, go to main screen
-                //navController.navigate(R.id.action_logInFragment_to_mainFragment)
+            if (checkInput(view)) {
+                val mail = (getView()?.findViewById<View>(R.id.emailInput) as EditText).text.toString()
+                val pass = (getView()?.findViewById<View>(R.id.passInput) as EditText).text.toString()
+                val loginData = LoginData(mail, pass)
 
-                //If response negative, show invalid mail/incorrect password error
-                //...
+                var retVal = true
+                val mailErr = getView()?.findViewById<View>(R.id.emailErr) as TextView
+                val passErr = getView()?.findViewById<View>(R.id.passLogErr) as TextView
+
+                apiService.login(loginData).enqueue(object : Callback<YourResponseModel> {
+                    override fun onResponse(
+                        call: Call<YourResponseModel>,
+                        response: Response<YourResponseModel>
+                    ) {
+                        val responseBody = response.body()
+                        val message = responseBody?.message
+                        Log.d("API Response", "Message: ${message}")
+                        if (responseBody != null && responseBody.message == "Login successful") {
+                            navController.navigate(R.id.action_logInFragment_to_mainFragment)
+                        } else {
+                            passErr.text = "Incorrect data"
+                            retVal = false
+                        }
+                    }
+
+                    override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
+                        // Handle network failure
+                        // You can show a network error message to the user
+                    }
+                })
             }
         }
     }
 
-    private fun checkInput(view: View): Boolean{
+    private fun checkInput(view: View): Boolean {
         var retVal = true
         val mail = (getView()?.findViewById<View>(R.id.emailInput) as EditText).text.toString()
         val pass = (getView()?.findViewById<View>(R.id.passInput) as EditText).text.toString()
         val mailErr = getView()?.findViewById<View>(R.id.emailErr) as TextView
         val passErr = getView()?.findViewById<View>(R.id.passLogErr) as TextView
 
-        if(mail == ""){
+        if (mail == "") {
             mailErr.text = "Missing email address"
             retVal = false
-        }else if(!mail.matches(Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$"))){
+        } else if (!mail.matches(Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$"))) {
             mailErr.text = "Invalid email address"
             retVal = false
-        }else{
+        } else {
             mailErr.text = ""
         }
 
-        if(pass == ""){
+        if (pass == "") {
             passErr.text = "Missing password"
             retVal = false
-        }else{
+        } else {
             passErr.text = ""
         }
         return retVal

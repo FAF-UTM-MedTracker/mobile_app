@@ -166,7 +166,7 @@
                     android:background="@color/edit_text_background"
                     android:drawablePadding="8dp"
                     android:ems="10"
-                    android:hint="DD/MM/YYYY"
+                    android:hint="YYYY-MM-DD"
                     android:inputType="text"
                     android:padding="8dp" />
             </LinearLayout>

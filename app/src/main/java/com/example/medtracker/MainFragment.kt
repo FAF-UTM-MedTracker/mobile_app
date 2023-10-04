@@ -1,11 +1,12 @@
 package com.example.medtracker
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import java.security.MessageDigest
+
 object HashUtils {
     fun hashString(input: String): String {
         val hexChars = "0123456789ABCDEF"

@@ -8,6 +8,8 @@ color edit_text_border
 color error
 color gray
 color white
+drawable _45546947
+drawable baseline_arrow_back_ios_24
 drawable baseline_email_24
 drawable baseline_lock_24
 drawable edit_text_background
