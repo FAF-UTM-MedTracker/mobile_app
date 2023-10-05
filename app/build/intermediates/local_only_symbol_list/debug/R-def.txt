@@ -9,6 +9,7 @@ color error
 color gray
 color white
 drawable _45546947
+drawable background_start
 drawable baseline_arrow_back_ios_24
 drawable baseline_email_24
 drawable baseline_lock_24
@@ -29,6 +30,7 @@ id emailErr
 id emailInput
 id frameLayout
 id frameLayout3
+id imageView
 id linearLayout
 id linearLayout2
 id linearLayoutBottom

@@ -42,7 +42,6 @@ class LogInFragment : Fragment() {
 
         val loginBtn = getView()?.findViewById<View>(R.id.button) as Button
         loginBtn.setOnClickListener {
-
             if (checkInput(view)) {
                 val mail = (getView()?.findViewById<View>(R.id.emailInput) as EditText).text.toString()
                 val pass = (getView()?.findViewById<View>(R.id.passInput) as EditText).text.toString()
@@ -53,17 +52,27 @@ class LogInFragment : Fragment() {
                 val passErr = getView()?.findViewById<View>(R.id.passLogErr) as TextView
 
                 apiService.login(loginData).enqueue(object : Callback<YourResponseModel> {
-                    override fun onResponse(
-                        call: Call<YourResponseModel>,
-                        response: Response<YourResponseModel>
-                    ) {
-                        val responseBody = response.body()
-                        val message = responseBody?.message
-                        Log.d("API Response", "Message: ${message}")
-                        if (responseBody != null && responseBody.message == "Login successful") {
-                            navController.navigate(R.id.action_logInFragment_to_mainFragment)
+                    override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                        if (response.isSuccessful) {
+                            val responseBody = response.body()
+                            Log.d("API Response", "Message: ${responseBody?.message}")
+
+                            if (responseBody != null && responseBody.message == "Login successful") {
+                                navController.navigate(R.id.action_logInFragment_to_mainFragment)
+                            } else {
+                                passErr.text = "Incorrect data"
+                                retVal = false
+                            }
                         } else {
-                            passErr.text = "Incorrect data"
+                            // Handle error response here
+                            val errorBody = response.errorBody()?.string()
+                            if (errorBody != null && errorBody.contains("User not found")) {
+                                mailErr.text = "Incorrect email"
+                            } else if (errorBody != null && errorBody.contains("Incorrect password")) {
+                                passErr.text = "Incorrect password"
+                            } else {
+                                passErr.text = "Incorrect data"
+                            }
                             retVal = false
                         }
                     }
@@ -73,6 +82,7 @@ class LogInFragment : Fragment() {
                         // You can show a network error message to the user
                     }
                 })
+
             }
         }
     }

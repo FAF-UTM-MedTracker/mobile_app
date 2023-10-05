@@ -53,20 +53,27 @@ class SignUpFragment : Fragment() {
 
                 val userData = UserData(mail, pass, name, surname, phone, date)
 
+                val mailErr = getView()?.findViewById<View>(R.id.mailErr) as TextView
+                var retVal = true
+
                 apiService.createUser(userData).enqueue(object : Callback<YourResponseModel> {
                     override fun onResponse(
                         call: Call<YourResponseModel>,
                         response: Response<YourResponseModel>
                     ) {
-                        val responseBody = response.body()
-                        if (responseBody != null && responseBody.message == "Registration successful") {
-                            navController.navigate(R.id.action_signUpFragment_to_mainFragment)
+                        if (response.isSuccessful){
+                            val responseBody = response.body()
+                            if (responseBody != null && responseBody.message == "Registration successful") {
+                                navController.navigate(R.id.action_signUpFragment_to_mainFragment)
+                            }
                         } else {
-                            // Handle the case when responseBody is null or message is not "Registration successful"
+                            val errorBody = response.errorBody()?.string()
+                            if (errorBody != null && errorBody.contains("Email address is already in use.")) {
+                                mailErr.text = "Email already in use"
+                                retVal = false
+                            }
                         }
                     }
-
-
                     override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
                         // Handle network failure
                         // You can show a network error message to the user
@@ -127,7 +134,7 @@ class SignUpFragment : Fragment() {
             dateErr.text = "Missing birthday"
             retVal = false
         } else if (!date.matches(Regex("^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])\$"))) {
-            dateErr.text = "Invalid date (Use format: YYYY-MM-DD)"
+            dateErr.text = "Invalid date"
             retVal = false
         } else {
             dateErr.text = ""
