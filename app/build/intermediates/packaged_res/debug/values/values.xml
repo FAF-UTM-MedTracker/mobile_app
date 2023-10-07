@@ -7,6 +7,7 @@
     <color name="edit_text_border">#03A9F4</color>
     <color name="error">#ee3333</color>
     <color name="gray">#808080</color>
+    <color name="transparent">#00ffffff</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">MedTracker</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -15,6 +16,13 @@
         
     </style>
     <style name="Theme.MedTracker" parent="Base.Theme.MedTracker"/>
+    <style name="card_view_rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">32dp</item>
+        <item name="cornerSizeTopLeft">32dp</item>
+        <item name="cornerSizeBottomLeft">32dp</item>
+        <item name="cornerSizeBottomRight">32dp</item>
+    </style>
     <style name="custom_card_view" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopRight">48dp</item>
@@ -24,5 +32,8 @@
     </style>
     <style name="custom_card_view_style" parent="Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/custom_card_view</item>
+    </style>
+    <style name="rounded_card_view_style" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/card_view_rounded</item>
     </style>
 </resources>

@@ -4,26 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import java.security.MessageDigest
-
-object HashUtils {
-    fun hashString(input: String): String {
-        val hexChars = "0123456789ABCDEF"
-        val bytes = MessageDigest
-            .getInstance("SHA-256")
-            .digest(input.toByteArray())
-        val result = StringBuilder(bytes.size * 2)
-
-        bytes.forEach {
-            val i = it.toInt()
-            result.append(hexChars[i shr 4 and 0x0f])
-            result.append(hexChars[i and 0x0f])
-        }
-
-        return result.toString()
-    }
-}
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 
 /**
  * A simple [Fragment] subclass.
@@ -31,9 +16,20 @@ object HashUtils {
  * create an instance of this fragment.
  */
 class MainFragment : Fragment() {
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+
+        val addBtn = getView()?.findViewById<View>(R.id.addTreatment) as ImageButton
+        addBtn.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_treatmentFragment)
+        }
     }
 
     override fun onCreateView(
@@ -53,7 +49,7 @@ class MainFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             MainFragment().apply {
                 arguments = Bundle().apply {
 

@@ -2095,6 +2095,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -2954,6 +2955,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable back_svgrepo_com
 drawable background_start
 drawable baseline_arrow_back_ios_24
 drawable baseline_email_24
@@ -3057,9 +3059,14 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable plus_large_svgrepo_com
+drawable settings_cog_line_svgrepo_com
+drawable switch_outline
 drawable test_level_drawable
+drawable toggle_widget_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable trash_xmark_alt_svgrepo_com
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3074,6 +3081,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id TitleMain
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3124,6 +3132,7 @@ id action_divider
 id action_image
 id action_logInFragment_to_mainFragment
 id action_logInFragment_to_signUpFragment
+id action_mainFragment_to_treatmentFragment
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -3134,9 +3143,12 @@ id action_signUpFragment_to_mainFragment
 id action_startFragment_to_logInFragment
 id action_startFragment_to_signUpFragment
 id action_text
+id action_treatmentFragment_to_mainFragment
 id actions
 id activity_chooser_view_content
 id add
+id addMedBtn
+id addTreatment
 id alertTitle
 id aligned
 id all
@@ -3154,6 +3166,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backBtn
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3207,14 +3220,22 @@ id currentState
 id custom
 id customPanel
 id cut
+id daily
 id dateErr
 id date_picker_actions
+id dates1
+id dates2
+id dates3
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delBtn1
+id delBtn2
+id delBtn3
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3248,6 +3269,7 @@ id emailErr
 id emailInput
 id embed
 id end
+id endDate
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
@@ -3270,6 +3292,7 @@ id floating
 id forever
 id fragment_container_view_tag
 id frameLayout
+id frameLayout2
 id frameLayout3
 id frost
 id fullscreen_header
@@ -3281,12 +3304,16 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id guideline2
 id header_title
 id hideable
 id home
 id homeAsUp
 id honorRequest
 id horizontal_only
+id hour1
+id hour2
+id hour3
 id icon
 id icon_group
 id ifRoom
@@ -3298,6 +3325,9 @@ id immediateStop
 id included
 id indeterminate
 id info
+id interval1
+id interval2
+id interval3
 id invisible
 id inward
 id italic
@@ -3314,6 +3344,7 @@ id line3
 id linear
 id linearLayout
 id linearLayout2
+id linearLayout3
 id linearLayoutBottom
 id listMode
 id list_item
@@ -3351,6 +3382,11 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id medName1
+id medName2
+id medName3
+id medPendingName
+id medView
 id message
 id middle
 id mini
@@ -3401,6 +3437,8 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nextMed1
+id nextMed2
 id noScroll
 id noState
 id none
@@ -3449,6 +3487,7 @@ id right_side
 id rounded
 id row_index_key
 id rtl
+id saveBtn
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3486,6 +3525,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settingsBtn
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3519,6 +3559,7 @@ id src_in
 id src_over
 id standard
 id start
+id startDate
 id startFragment
 id startHorizontal
 id startToEnd
@@ -3556,7 +3597,6 @@ id textView
 id textView2
 id textView4
 id textView5
-id textView7
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3567,6 +3607,8 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeInput
+id timeInput2
 id title
 id titleDividerNoCustom
 id title_template
@@ -3581,6 +3623,10 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id treatmentFragment
+id treatmentName
+id treatmentName1
+id treatmentName2
 id triangle
 id unchecked
 id uniform
@@ -3596,6 +3642,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id weekly
 id west
 id withText
 id with_icon
@@ -3740,6 +3787,7 @@ layout fragment_log_in
 layout fragment_main
 layout fragment_sign_up
 layout fragment_start
+layout fragment_treatment
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -5071,8 +5119,10 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style card_view_rounded
 style custom_card_view
 style custom_card_view_style
+style rounded_card_view_style
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
