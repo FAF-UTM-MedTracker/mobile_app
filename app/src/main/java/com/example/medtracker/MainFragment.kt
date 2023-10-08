@@ -30,6 +30,11 @@ class MainFragment : Fragment() {
         addBtn.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_treatmentFragment)
         }
+
+        val treatmentBtn = getView()?.findViewById<View>(R.id.treatmentName1) as TextView
+        treatmentBtn.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_medicineFragment)
+        }
     }
 
     override fun onCreateView(

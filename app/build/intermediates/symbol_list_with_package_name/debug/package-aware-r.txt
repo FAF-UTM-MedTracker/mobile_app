@@ -3119,6 +3119,7 @@ id accessibility_custom_action_9
 id actionDown
 id actionDownUp
 id actionUp
+id action_addMedicineFragment_to_medicineFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -3132,7 +3133,10 @@ id action_divider
 id action_image
 id action_logInFragment_to_mainFragment
 id action_logInFragment_to_signUpFragment
+id action_mainFragment_to_medicineFragment
 id action_mainFragment_to_treatmentFragment
+id action_medicineFragment_to_addMedicineFragment
+id action_medicineFragment_to_mainFragment
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -3148,6 +3152,7 @@ id actions
 id activity_chooser_view_content
 id add
 id addMedBtn
+id addMedicineFragment
 id addTreatment
 id alertTitle
 id aligned
@@ -3387,6 +3392,7 @@ id medName2
 id medName3
 id medPendingName
 id medView
+id medicineFragment
 id message
 id middle
 id mini
@@ -3525,7 +3531,6 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
-id settingsBtn
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3611,6 +3616,7 @@ id timeInput
 id timeInput2
 id title
 id titleDividerNoCustom
+id titleMain
 id title_template
 id toggle
 id top
@@ -3623,6 +3629,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id treat1
 id treatmentFragment
 id treatmentName
 id treatmentName1
@@ -3783,8 +3790,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_add_medicine
 layout fragment_log_in
 layout fragment_main
+layout fragment_medicine
 layout fragment_sign_up
 layout fragment_start
 layout fragment_treatment
