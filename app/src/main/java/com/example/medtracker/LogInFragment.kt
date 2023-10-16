@@ -1,5 +1,6 @@
 package com.example.medtracker
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -24,6 +25,7 @@ import retrofit2.Response
  * create an instance of this fragment.
  */
 class LogInFragment : Fragment() {
+    var bearerToken: String = ""
     private lateinit var navController: NavController
     val apiService = ApiManager.apiService
 
@@ -53,11 +55,18 @@ class LogInFragment : Fragment() {
 
                 apiService.login(loginData).enqueue(object : Callback<YourResponseModel> {
                     override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                        Log.d("API Response", "Message: ${response}")
+
                         if (response.isSuccessful) {
                             val responseBody = response.body()
-                            Log.d("API Response", "Message: ${responseBody?.message}")
 
-                            if (responseBody != null && responseBody.message == "Login successful") {
+                            if (responseBody != null && responseBody.message == "Authententication succedeed.") {
+                                val bearerToken = responseBody.jwt
+                                Log.d("bearerToken", "Message: ${bearerToken}")
+
+                                storeBearerToken(bearerToken)
+
+
                                 navController.navigate(R.id.action_logInFragment_to_mainFragment)
                             } else {
                                 passErr.text = "Incorrect data"
@@ -68,7 +77,7 @@ class LogInFragment : Fragment() {
                             val errorBody = response.errorBody()?.string()
                             if (errorBody != null && errorBody.contains("User not found")) {
                                 mailErr.text = "Incorrect email"
-                            } else if (errorBody != null && errorBody.contains("Incorrect password")) {
+                            } else if (errorBody != null && errorBody.contains("Authentication error.")) {
                                 passErr.text = "Incorrect password"
                             } else {
                                 passErr.text = "Incorrect data"
@@ -86,6 +95,12 @@ class LogInFragment : Fragment() {
             }
         }
     }
+
+    // Store the bearer token in your LogInFragment
+    private fun storeBearerToken(bearerToken: String) {
+        this.bearerToken = bearerToken
+    }
+
 
     private fun checkInput(view: View): Boolean {
         var retVal = true

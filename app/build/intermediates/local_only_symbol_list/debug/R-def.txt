@@ -45,9 +45,11 @@ id button
 id cardView
 id daily
 id dateErr
+id dates
 id dates1
 id dates2
 id dates3
+id delBtn
 id delBtn1
 id delBtn2
 id delBtn3
@@ -59,10 +61,12 @@ id frameLayout
 id frameLayout2
 id frameLayout3
 id guideline2
+id hour
 id hour1
 id hour2
 id hour3
 id imageView
+id interval
 id interval1
 id interval2
 id interval3
@@ -76,6 +80,8 @@ id login_button
 id mailErr
 id mailInput
 id mainFragment
+id main_scroll_view
+id medName
 id medName1
 id medName2
 id medName3
@@ -122,6 +128,7 @@ layout fragment_medicine
 layout fragment_sign_up
 layout fragment_start
 layout fragment_treatment
+layout medicine_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph

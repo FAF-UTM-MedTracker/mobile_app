@@ -60,6 +60,10 @@
         "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/settings_cog_line_svgrepo_com.xml"
     },
     {
+        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_medicine_item.xml.flat",
+        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/medicine_item.xml"
+    },
+    {
         "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_stupid_fragment.xml.flat",
         "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/stupid_fragment.xml"
     },

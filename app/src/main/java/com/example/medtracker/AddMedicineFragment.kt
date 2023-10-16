@@ -1,13 +1,19 @@
 package com.example.medtracker
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.medtracker.api.ApiManager
+import com.example.medtracker.api.YourResponseModel
+import com.example.medtracker.data.MedicationPost
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +41,27 @@ class AddMedicineFragment : Fragment() {
         backBtn.setOnClickListener {
             navController.navigate(R.id.action_addMedicineFragment_to_medicineFragment)
         }
+    }
+
+
+    // Function to add a medication
+    private fun addMedication(medication: MedicationPost) {
+        val call = ApiManager.apiService.addMedication(medication)
+
+        call.enqueue(object : Callback<YourResponseModel> {
+            override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                if (response.isSuccessful) {
+                    val message = response.body()?.message
+                    // Handle the success response
+                } else {
+                    // Handle the error response
+                }
+            }
+
+            override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
+                // Handle the network failure
+            }
+        })
     }
 
     override fun onCreateView(

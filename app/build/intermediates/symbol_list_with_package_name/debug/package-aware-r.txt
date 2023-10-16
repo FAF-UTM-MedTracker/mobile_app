@@ -3228,6 +3228,7 @@ id cut
 id daily
 id dateErr
 id date_picker_actions
+id dates
 id dates1
 id dates2
 id dates3
@@ -3235,6 +3236,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delBtn
 id delBtn1
 id delBtn2
 id delBtn3
@@ -3316,6 +3318,7 @@ id home
 id homeAsUp
 id honorRequest
 id horizontal_only
+id hour
 id hour1
 id hour2
 id hour3
@@ -3330,6 +3333,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id interval
 id interval1
 id interval2
 id interval3
@@ -3362,6 +3366,7 @@ id m3_side_sheet
 id mailErr
 id mailInput
 id mainFragment
+id main_scroll_view
 id marquee
 id masked
 id match_constraint
@@ -3387,6 +3392,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id medName
 id medName1
 id medName2
 id medName3
@@ -3816,6 +3822,7 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
+layout medicine_item
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
