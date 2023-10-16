@@ -22,5 +22,5 @@ interface ApiService {
     fun addMedication(@Body medication: MedicationPost): Call<YourResponseModel>
 
     @GET("/Patient/GetTreatments")
-    fun getTreatments(): Call<TreatmentListResponse>
+    fun getTreatments(): Call<List<TreatmentListResponse>>
 }

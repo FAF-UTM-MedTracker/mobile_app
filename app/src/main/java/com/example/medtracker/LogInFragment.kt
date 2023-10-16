@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.medtracker.api.ApiManager
+import com.example.medtracker.api.LoginApiManager
 import com.example.medtracker.api.YourResponseModel
 import com.example.medtracker.data.LoginData
 import retrofit2.Call
@@ -27,7 +28,7 @@ import retrofit2.Response
 class LogInFragment : Fragment() {
     var bearerToken: String = ""
     private lateinit var navController: NavController
-    val apiService = ApiManager.apiService
+    val apiService = LoginApiManager.apiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,8 +65,10 @@ class LogInFragment : Fragment() {
                                 val bearerToken = responseBody.jwt
                                 Log.d("bearerToken", "Message: ${bearerToken}")
 
-                                storeBearerToken(bearerToken)
-
+                                val sharedPreferences = requireActivity().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
+                                val editor = sharedPreferences.edit()
+                                editor.putString("bearerToken", bearerToken)
+                                editor.apply()
 
                                 navController.navigate(R.id.action_logInFragment_to_mainFragment)
                             } else {
@@ -91,14 +94,8 @@ class LogInFragment : Fragment() {
                         // You can show a network error message to the user
                     }
                 })
-
             }
         }
-    }
-
-    // Store the bearer token in your LogInFragment
-    private fun storeBearerToken(bearerToken: String) {
-        this.bearerToken = bearerToken
     }
 
 

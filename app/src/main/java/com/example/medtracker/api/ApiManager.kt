@@ -1,9 +1,10 @@
 package com.example.medtracker.api
 
 
-import com.example.medtracker.LogInFragment
+import android.content.Context
+import android.util.Log
+import com.example.medtracker.YourApplicationClass
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -13,18 +14,14 @@ object ApiManager {
 
     // Create an instance of OkHttpClient with the AuthInterceptor
     private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(AuthInterceptor(getBearerToken()))
+        .addInterceptor(AuthInterceptor())
         .build()
 
     private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        //.client(okHttpClient)
+        .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-
-    fun getBearerToken(): String {
-        return LogInFragment().bearerToken
-    }
 
     val apiService: ApiService = retrofit.create(ApiService::class.java)
 

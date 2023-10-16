@@ -58,13 +58,14 @@ class MedicineFragment : Fragment() {
     // Function to get the list of medications
     fun getMedications() {
         val call = ApiManager.apiService.getTreatments()
+        Log.d("Medications1", "Response is ${call}")
 
-        call.enqueue(object : Callback<TreatmentListResponse> {
-            override fun onResponse(call: Call<TreatmentListResponse>, response: Response<TreatmentListResponse>) {
-                Log.d("Medications", "Response is ${response}")
-
+        call.enqueue(object : Callback<List<TreatmentListResponse>> {
+            override fun onResponse(call: Call<List<TreatmentListResponse>>, response: Response<List<TreatmentListResponse>>) {
                 if (response.isSuccessful) {
-                    val treatments = response.body()?.treatments
+                    Log.d("Medications3", "Response is ${response.body()}")
+
+                    val treatments = response.body()
                     if (treatments != null) {
                         for (treatment in treatments) {
                             for (medication in treatment.medications!!){
@@ -84,8 +85,10 @@ class MedicineFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<TreatmentListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<List<TreatmentListResponse>>, t: Throwable) {
                 // suck it
+                Log.e("Medications3", "Request failed with error: ${t.message}")
+
             }
         })
     }
