@@ -1,12 +1,12 @@
 package com.example.medtracker
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -18,6 +18,7 @@ import com.example.medtracker.data.TreatmentListResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,12 +52,13 @@ class MedicineFragment : Fragment() {
             navController.navigate(R.id.action_medicineFragment_to_mainFragment)
         }
 
-        getMedications()
+        val treatmentId = 1
+        getMedications(treatmentId)
     }
 
 
     // Function to get the list of medications
-    fun getMedications() {
+    fun getMedications(treatmentId: Int) {
         val call = ApiManager.apiService.getTreatments()
         Log.d("Medications1", "Response is ${call}")
 
@@ -65,21 +67,18 @@ class MedicineFragment : Fragment() {
                 if (response.isSuccessful) {
                     Log.d("Medications3", "Response is ${response.body()}")
 
-                    val treatments = response.body()
-                    if (treatments != null) {
-                        for (treatment in treatments) {
-                            for (medication in treatment.medications!!){
-                                // Add the medicationRectangle to your UI
-                                addMedicationToUI(
-                                    medication.pName,
-                                    medication.start_Time,
-                                    medication.end_Time,
-                                    medication.timeUse
-                                )
-                            }
+                    val treatment = response.body()?.get(treatmentId)
+                    if (treatment != null) {
+                        for (medication in treatment.medications!!){
+                            // Add the medicationRectangle to your UI
+                            addMedicationToUI(
+                                medication.pName,
+                                medication.start_Time.substring(0, 10),
+                                medication.end_Time.substring(0, 10),
+                                medication.timeUse.substring(11, 16)
+                            )
                         }
                     }
-                    // Handle the list of medications
                 } else {
                     // Handle the error response
                 }
@@ -112,7 +111,9 @@ class MedicineFragment : Fragment() {
         val scrollView = view?.findViewById<ScrollView>(R.id.main_scroll_view)
 
         // Add the medication rectangle to the ScrollView
-        scrollView?.addView(medicationRectangle)
+        val medicationContainer = view?.findViewById<LinearLayout>(R.id.medicationContainer)
+        medicationContainer?.addView(medicationRectangle)
+
     }
 
 

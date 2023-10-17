@@ -1,9 +1,6 @@
 package com.example.medtracker.api
 
 
-import android.content.Context
-import android.util.Log
-import com.example.medtracker.YourApplicationClass
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

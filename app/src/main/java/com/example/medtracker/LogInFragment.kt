@@ -12,7 +12,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.example.medtracker.api.ApiManager
 import com.example.medtracker.api.LoginApiManager
 import com.example.medtracker.api.YourResponseModel
 import com.example.medtracker.data.LoginData

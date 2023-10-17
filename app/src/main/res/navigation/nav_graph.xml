@@ -55,7 +55,11 @@
             app:destination="@id/treatmentFragment" />
         <action
             android:id="@+id/action_mainFragment_to_medicineFragment"
-            app:destination="@id/medicineFragment" />
+            app:destination="@id/medicineFragment">
+            <argument
+                android:name="treatmentId"
+                app:argType="integer" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/treatmentFragment"

@@ -3236,7 +3236,6 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
-id delBtn
 id delBtn1
 id delBtn2
 id delBtn3
@@ -3333,7 +3332,6 @@ id immediateStop
 id included
 id indeterminate
 id info
-id interval
 id interval1
 id interval2
 id interval3
@@ -3398,6 +3396,7 @@ id medName2
 id medName3
 id medPendingName
 id medView
+id medicationContainer
 id medicineFragment
 id message
 id middle
@@ -3635,8 +3634,8 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id treat1
 id treatmentFragment
+id treatmentId
 id treatmentName
 id treatmentName1
 id treatmentName2
