@@ -52,13 +52,14 @@ class MedicineFragment : Fragment() {
             navController.navigate(R.id.action_medicineFragment_to_mainFragment)
         }
 
-        val treatmentId = 1
-        getMedications(treatmentId)
+        val title = getView()?.findViewById<TextView>(R.id.TitleMain) as TextView
+        title.text = requireArguments().getString("tName")
+        getMedications(requireArguments().getInt("idTreatment"))
     }
 
 
     // Function to get the list of medications
-    fun getMedications(treatmentId: Int) {
+    private fun getMedications(treatmentId: Int) {
         val call = ApiManager.apiService.getTreatments()
         Log.d("Medications1", "Response is ${call}")
 
@@ -67,16 +68,18 @@ class MedicineFragment : Fragment() {
                 if (response.isSuccessful) {
                     Log.d("Medications3", "Response is ${response.body()}")
 
-                    val treatment = response.body()?.get(treatmentId)
-                    if (treatment != null) {
-                        for (medication in treatment.medications!!){
-                            // Add the medicationRectangle to your UI
-                            addMedicationToUI(
-                                medication.pName,
-                                medication.start_Time.substring(0, 10),
-                                medication.end_Time.substring(0, 10),
-                                medication.timeUse.substring(11, 16)
-                            )
+                    for (treatment in response.body()!!){
+                        if(treatment.idTreatment == treatmentId){
+                            for (medication in treatment.medications!!){
+                                // Add the medicationRectangle to your UI
+                                addMedicationToUI(
+                                    medication.pName,
+                                    medication.start_Time.substring(0, 10),
+                                    medication.end_Time.substring(0, 10),
+                                    medication.timeUse.substring(11, 16)
+                                )
+                            }
+
                         }
                     }
                 } else {
@@ -85,7 +88,6 @@ class MedicineFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<TreatmentListResponse>>, t: Throwable) {
-                // suck it
                 Log.e("Medications3", "Request failed with error: ${t.message}")
 
             }

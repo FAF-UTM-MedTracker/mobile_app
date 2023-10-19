@@ -24,7 +24,7 @@ import retrofit2.Response
  */
 class SignUpFragment : Fragment() {
     private lateinit var navController: NavController
-    val apiService = ApiManager.apiService
+    private val apiService = ApiManager.apiService
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

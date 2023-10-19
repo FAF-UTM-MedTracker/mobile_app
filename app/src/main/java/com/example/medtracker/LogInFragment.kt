@@ -27,7 +27,7 @@ import retrofit2.Response
 class LogInFragment : Fragment() {
     var bearerToken: String = ""
     private lateinit var navController: NavController
-    val apiService = LoginApiManager.apiService
+    private val apiService = LoginApiManager.apiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

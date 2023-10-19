@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -31,9 +33,29 @@ class TreatmentFragment : Fragment() {
             navController.navigate(R.id.action_treatmentFragment_to_mainFragment)
         }
 
-        val saveBtn = getView()?.findViewById<View>(R.id.saveBtn) as TextView
-        saveBtn.setOnClickListener {
-            navController.navigate(R.id.action_treatmentFragment_to_mainFragment)
+        val addBtn = getView()?.findViewById<View>(R.id.saveTreatmentBtn) as Button
+        if(arguments != null){
+            val treatmentTitle = getView()?.findViewById(R.id.treatmentTitle) as TextView
+            val treatmentName = getView()?.findViewById(R.id.treatmentName) as EditText
+            val doctorName = getView()?.findViewById(R.id.doctorName) as EditText
+            val treatmentDesc = getView()?.findViewById(R.id.description) as EditText
+
+            // Change UI to inform user of creating changes
+            treatmentTitle.text = "Edit Treatment"
+            treatmentName.setText(arguments?.getString("tName"))
+            doctorName.setText(arguments?.getString("doctorID").toString())
+            treatmentDesc.setText(arguments?.getString("notePatient"))
+
+            // Updating the Treatment and sending User back to main menu
+            addBtn.setOnClickListener {
+                // TODO: Add Update API call
+                navController.navigate(R.id.action_treatmentFragment_to_mainFragment)
+            }
+        }else{
+            addBtn.setOnClickListener {
+                // TODO: Add Create API call
+                navController.navigate(R.id.action_treatmentFragment_to_medicineFragment)
+            }
         }
     }
 
@@ -50,8 +72,6 @@ class TreatmentFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
          * @return A new instance of fragment TreatmentFragment.
          */
         // TODO: Rename and change types and number of parameters

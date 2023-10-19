@@ -10,4 +10,5 @@
     <color name="edit_text_background">#f6fbff</color>
     <color name="transparent">#00ffffff</color>
     <color name="error">#ee3333</color>
+    <color name="warning">#eebb00</color>
 </resources>

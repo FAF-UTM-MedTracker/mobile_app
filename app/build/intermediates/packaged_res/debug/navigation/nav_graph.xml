@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/signUpFragment">
+    app:startDestination="@id/logInFragment">
 
     <fragment
         android:id="@+id/startFragment"
@@ -56,9 +56,6 @@
         <action
             android:id="@+id/action_mainFragment_to_medicineFragment"
             app:destination="@id/medicineFragment">
-            <argument
-                android:name="treatmentId"
-                app:argType="integer" />
         </action>
     </fragment>
     <fragment
@@ -70,6 +67,11 @@
             android:id="@+id/action_treatmentFragment_to_mainFragment"
             app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_treatmentFragment_to_medicineFragment"
+            app:destination="@id/medicineFragment"
+            app:popUpTo="@id/mainFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
