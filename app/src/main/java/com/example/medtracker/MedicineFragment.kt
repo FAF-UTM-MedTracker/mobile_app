@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -43,8 +44,11 @@ class MedicineFragment : Fragment() {
         navController = Navigation.findNavController(view)
 
         val addBtn = getView()?.findViewById<View>(R.id.addTreatment) as ImageButton
-        addBtn.setOnClickListener {
-            navController.navigate(R.id.action_medicineFragment_to_addMedicineFragment)
+        addBtn.setOnClickListener{
+            navController.navigate(R.id.action_medicineFragment_to_addMedicineFragment,
+                bundleOf("idTreatment" to requireArguments().getInt("idTreatment"),
+                    "tName" to requireArguments().getString("tName"))
+            )
         }
 
         val backBtn = getView()?.findViewById<View>(R.id.backBtn) as ImageButton
@@ -73,13 +77,14 @@ class MedicineFragment : Fragment() {
                             for (medication in treatment.medications!!){
                                 // Add the medicationRectangle to your UI
                                 addMedicationToUI(
+                                    medication.idTreatment,
                                     medication.pName,
                                     medication.start_Time.substring(0, 10),
                                     medication.end_Time.substring(0, 10),
                                     medication.timeUse.substring(11, 16)
                                 )
                             }
-
+                            break
                         }
                     }
                 } else {
@@ -94,7 +99,13 @@ class MedicineFragment : Fragment() {
         })
     }
 
-    private fun addMedicationToUI(name: String, start: String, end: String, time: String) {
+    private fun addMedicationToUI(
+        idTreatment: Int,
+        name: String,
+        start: String,
+        end: String,
+        time: String
+    ) {
         // Inflate the medication rectangle layout
         val medicationRectangle = layoutInflater.inflate(R.layout.medicine_item, null) as ConstraintLayout
 
@@ -102,12 +113,10 @@ class MedicineFragment : Fragment() {
         val medName = medicationRectangle.findViewById<TextView>(R.id.medName)
         val dates = medicationRectangle.findViewById<TextView>(R.id.dates)
         val hour = medicationRectangle.findViewById<TextView>(R.id.hour)
-        //val interval = medicationRectangle.findViewById<TextView>(R.id.interval)
 
         medName.text = name
         dates.text = "$start - $end"
         hour.text = time
-        // Set the interval accordingly
 
         // Find your ScrollView (replace with the actual ID)
         val scrollView = view?.findViewById<ScrollView>(R.id.main_scroll_view)

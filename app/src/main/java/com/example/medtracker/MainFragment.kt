@@ -58,6 +58,8 @@ class MainFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     val treatmentList = response.body()!!
+                    Log.d("treatmentList", "Response is ${treatmentList}")
+
                     val menuLayout = getView()?.findViewById(R.id.menu_layout) as LinearLayout
 
                     for (treatment in treatmentList) {

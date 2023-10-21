@@ -1,14 +1,14 @@
-#Fri Oct 20 01:18:54 EEST 2023
-base.0=C\:\\Users\\RandomNick\\Desktop\\MedTracker\\MedTracker\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\RandomNick\\Desktop\\MedTracker\\MedTracker\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\RandomNick\\Desktop\\MedTracker\\MedTracker\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=C\:\\Users\\RandomNick\\Desktop\\MedTracker\\MedTracker\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.4=C\:\\Users\\RandomNick\\Desktop\\MedTracker\\MedTracker\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.5=C\:\\Users\\RandomNick\\Desktop\\MedTracker\\MedTracker\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Sun Oct 22 01:01:38 EEST 2023
+base.0=/Users/air/Desktop/PBL/mobile_app/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/air/Desktop/PBL/mobile_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/Users/air/Desktop/PBL/mobile_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.3=/Users/air/Desktop/PBL/mobile_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
+base.4=/Users/air/Desktop/PBL/mobile_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
+base.5=/Users/air/Desktop/PBL/mobile_app/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
-path.2=10/classes.dex
-path.3=1/classes.dex
+path.2=1/classes.dex
+path.3=10/classes.dex
 path.4=3/classes.dex
 path.5=classes2.dex
 renamed.0=classes.dex
