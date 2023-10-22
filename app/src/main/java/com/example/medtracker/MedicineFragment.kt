@@ -18,9 +18,14 @@ import com.example.medtracker.api.ApiManager
 import com.example.medtracker.api.YourResponseModel
 import com.example.medtracker.data.MedicationRemove
 import com.example.medtracker.data.TreatmentListResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.IOException
 import java.util.logging.Handler
 
 
@@ -70,8 +75,10 @@ class MedicineFragment : Fragment() {
     // Function to get the list of medications
     private fun getMedications(treatmentId: Int) {
         // Clear the view
-        val medicationContainer = view?.findViewById<LinearLayout>(R.id.medicationContainer)
-        medicationContainer?.removeAllViews()
+        requireActivity().runOnUiThread {
+            val medicationContainer = view?.findViewById<LinearLayout>(R.id.medicationContainer)
+            medicationContainer?.removeAllViews()
+        }
 
         val call = ApiManager.apiService.getTreatments()
         Log.d("Medications1", "Response is ${call}")
@@ -144,26 +151,30 @@ class MedicineFragment : Fragment() {
         // Find your ScrollView (replace with the actual ID)
         val scrollView = view?.findViewById<ScrollView>(R.id.main_scroll_view)
 
-        // Add the medication rectangle to the ScrollView
-        val medicationContainer = view?.findViewById<LinearLayout>(R.id.medicationContainer)
-        medicationContainer?.addView(medicationRectangle)
+        requireActivity().runOnUiThread {
+            // Your UI update code here
+            val medicationContainer = view?.findViewById<LinearLayout>(R.id.medicationContainer)
+            medicationContainer?.addView(medicationRectangle)
+        }
 
         deleteButton.setOnClickListener {
             // Get the medicationId from the tag
             val idMedication = it.getTag(R.id.delBtn) as Int
-            val idMedicationRemove = MedicationRemove(idMedication)
-            apiService.removeMedication(idMedicationRemove).enqueue(object : Callback<YourResponseModel> {
-                override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
-                    Log.d("removeMedication", "${response}")
-                }
+            val requestBody = MedicationRemove(idMedication)
 
-                override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
-                    // Handle network failure
-                    // You can show a network error message to the user
+            // Use CoroutineScope to execute the network request in the background
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val response = apiService.removeMedication(requestBody).execute()
+                    val statusCode = response.code()
+
+                    if (statusCode in 200..299) {
+                        getMedications(requireArguments().getInt("idTreatment"))
+                    }
+                } catch (e: IOException) {
+                    // Handle the exception
                 }
-            })
-            Thread.sleep(50)
-            getMedications(requireArguments().getInt("idTreatment"))
+            }
         }
 
         editBtn.setOnClickListener{

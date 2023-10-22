@@ -19,9 +19,14 @@ import com.example.medtracker.api.ApiManager
 import com.example.medtracker.api.YourResponseModel
 import com.example.medtracker.data.MedicationPost
 import com.example.medtracker.data.MedicationUpdate
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.IOException
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
@@ -86,44 +91,47 @@ class AddMedicineFragment : Fragment() {
                 val description = (getView()?.findViewById<View>(R.id.description) as EditText).text.toString()
                 val idTreatment = requireArguments().getInt("idTreatment")
 
-                if (requireArguments().getString("goal") == "update"){
-                    val medication = MedicationUpdate(requireArguments().getInt("idMedication"), medicineName, description, startDate, endDate, hour, quantity)
-                    apiService.updateMedication(medication).enqueue(object : Callback<YourResponseModel> {
-                        override fun onResponse(
-                            call: Call<YourResponseModel>,
-                            response: Response<YourResponseModel>
-                        ) {}
-
-                        override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
-                            Log.e("MyApp", "Failure: ${t.message}")
-                        }
-                    })
-                } else {
-                    val medication = MedicationPost(idTreatment, medicineName, description, startDate, endDate, hour, quantity)
-                    apiService.addMedication(medication).enqueue(object : Callback<YourResponseModel> {
-                        override fun onResponse(
-                            call: Call<YourResponseModel>,
-                            response: Response<YourResponseModel>
-                        ) {
-                            Log.d("MyApp", "Inside onResponse")
-                            if (response.isSuccessful) {
-                                Log.d("Response", "Medication added successfully")
-                            } else {
-                                Log.e("Response", "Unsuccessful response: ${response.code()}")
+                if (requireArguments().getString("goal") == "update") {
+                    val requestBody = MedicationUpdate(requireArguments().getInt("idMedication"), medicineName, description, startDate, endDate, hour, quantity)
+                    CoroutineScope(Dispatchers.IO).launch {
+                        try {
+                            val response = apiService.updateMedication(requestBody).execute()
+                            val statusCode = response.code()
+                            if (statusCode in 200..299) {
+                                withContext(Dispatchers.Main) {
+                                    navController.navigate(R.id.action_addMedicineFragment_to_medicineFragment,
+                                        bundleOf(
+                                            "idTreatment" to requireArguments().getInt("idTreatment"),
+                                            "tName" to requireArguments().getString("tName")
+                                        )
+                                    )
+                                }
                             }
+                        } catch (e: IOException) {
+                            // Handle the exception
                         }
-
-                        override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
-                            Log.e("MyApp", "Failure: ${t.message}")
+                    }
+                } else {
+                    val requestBody = MedicationPost(idTreatment, medicineName, description, startDate, endDate, hour, quantity)
+                    CoroutineScope(Dispatchers.IO).launch {
+                        try {
+                            val response = apiService.addMedication(requestBody).execute()
+                            val statusCode = response.code()
+                            if (statusCode in 200..299) {
+                                withContext(Dispatchers.Main) {
+                                    navController.navigate(R.id.action_addMedicineFragment_to_medicineFragment,
+                                        bundleOf(
+                                            "idTreatment" to requireArguments().getInt("idTreatment"),
+                                            "tName" to requireArguments().getString("tName")
+                                        )
+                                    )
+                                }
+                            }
+                        } catch (e: IOException) {
+                            // Handle the exception
                         }
-                    })
+                    }
                 }
-
-                Thread.sleep(100)
-                navController.navigate(R.id.action_addMedicineFragment_to_medicineFragment,
-                    bundleOf("idTreatment" to requireArguments().getInt("idTreatment"),
-                        "tName" to requireArguments().getString("tName"))
-                )
             }
         }
     }

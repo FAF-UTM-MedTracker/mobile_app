@@ -9,7 +9,9 @@ import com.example.medtracker.data.TreatmentPost
 import com.example.medtracker.data.TreatmentRemove
 import com.example.medtracker.data.TreatmentUpdate
 import com.example.medtracker.data.UserData
+import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -22,13 +24,13 @@ interface ApiService {
     fun login(@Body loginData: LoginData): Call<YourResponseModel>
 
     @POST("/Patient/AddMedication")
-    fun addMedication(@Body medication: MedicationPost): Call<YourResponseModel>
+    fun addMedication(@Body medication: MedicationPost): Call<Void>
 
     @POST("/Patient/RemoveMedication")
-    fun removeMedication(@Body idMedication: MedicationRemove): Call<YourResponseModel>
+    fun removeMedication(@Body idMedication: MedicationRemove): Call<Void>
 
     @POST("/Patient/UpdateMedication")
-    fun updateMedication(@Body medication: MedicationUpdate): Call<YourResponseModel>
+    fun updateMedication(@Body medication: MedicationUpdate): Call<Void>
 
     @POST("/Patient/AddTreatment")
     fun addTreatment(@Body treatment: TreatmentPost): Call<YourResponseModel>
