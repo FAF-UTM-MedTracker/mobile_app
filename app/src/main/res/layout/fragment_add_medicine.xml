@@ -204,41 +204,35 @@
                         android:id="@+id/medNameErr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
                         android:textColor="@color/error"
                         android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/medicationName"
                         app:layout_constraintTop_toBottomOf="@+id/medicationName" />
 
                     <TextView
                         android:id="@+id/startDateErr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
                         android:textColor="@color/error"
                         android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/startDate"
                         app:layout_constraintTop_toBottomOf="@+id/startDate" />
 
                     <TextView
                         android:id="@+id/hourErr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
                         android:textColor="@color/error"
                         android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/timeInput"
                         app:layout_constraintTop_toBottomOf="@+id/timeInput" />
 
                     <TextView
                         android:id="@+id/qtyErr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
                         android:textColor="@color/error"
                         android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.18"
                         app:layout_constraintStart_toStartOf="@+id/qty"
                         app:layout_constraintTop_toBottomOf="@+id/qty" />
 
@@ -246,11 +240,8 @@
                         android:id="@+id/endDateErr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
                         android:textColor="@color/error"
                         android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.191"
                         app:layout_constraintStart_toStartOf="@+id/endDate"
                         app:layout_constraintTop_toBottomOf="@+id/endDate" />
 

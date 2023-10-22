@@ -48,9 +48,12 @@ id cardView
 id dateErr
 id dates
 id dates1
+id delBtn
 id delBtn1
 id description
+id description1
 id doctorName
+id editBtn
 id editBtn1
 id emailErr
 id emailInput
@@ -66,6 +69,7 @@ id imageView
 id linearLayout
 id linearLayout2
 id linearLayout3
+id linearLayout4
 id linearLayoutBottom
 id logInFragment
 id logInLayout
@@ -93,6 +97,7 @@ id phoneErr
 id phoneInput
 id qty
 id qtyErr
+id quantity
 id saveMedBtn
 id saveTreatmentBtn
 id signInLayout

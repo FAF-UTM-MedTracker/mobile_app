@@ -3234,10 +3234,12 @@ int id decelerate 0x7f0800a4
 int id decelerateAndComplete 0x7f0800a5
 int id decor_content_parent 0x7f0800a6
 int id default_activity_button 0x7f0800a7
+int id delBtn 0x7f080259
 int id delBtn1 0x7f0800a8
 int id deltaRelative 0x7f0800a9
 int id dependency_ordering 0x7f0800aa
 int id description 0x7f0800ab
+int id description1 0x7f080251
 int id design_bottom_sheet 0x7f0800ac
 int id design_menu_item_action_area 0x7f0800ad
 int id design_menu_item_action_area_stub 0x7f0800ae
@@ -3266,6 +3268,7 @@ int id easeInOut 0x7f0800c4
 int id easeOut 0x7f0800c5
 int id east 0x7f0800c6
 int id edge 0x7f0800c7
+int id editBtn 0x7f08025a
 int id editBtn1 0x7f0800c8
 int id edit_query 0x7f0800c9
 int id elastic 0x7f0800ca
@@ -3346,6 +3349,7 @@ int id linear 0x7f080113
 int id linearLayout 0x7f080114
 int id linearLayout2 0x7f080115
 int id linearLayout3 0x7f080116
+int id linearLayout4 0x7f08025b
 int id linearLayoutBottom 0x7f080117
 int id listMode 0x7f080118
 int id list_item 0x7f080119
@@ -3480,6 +3484,7 @@ int id progress_circular 0x7f080198
 int id progress_horizontal 0x7f080199
 int id qty 0x7f08024d
 int id qtyErr 0x7f080258
+int id quantity 0x7f08025c
 int id radio 0x7f08019a
 int id ratio 0x7f08019b
 int id rectangles 0x7f08019c

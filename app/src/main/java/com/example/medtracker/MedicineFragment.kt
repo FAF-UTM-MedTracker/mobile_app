@@ -15,10 +15,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.medtracker.api.ApiManager
+import com.example.medtracker.api.YourResponseModel
+import com.example.medtracker.data.MedicationRemove
 import com.example.medtracker.data.TreatmentListResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.logging.Handler
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,6 +37,8 @@ private const val ARG_PARAM2 = "param2"
 class MedicineFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private  lateinit var navController: NavController
+    private val apiService = ApiManager.apiService
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +69,10 @@ class MedicineFragment : Fragment() {
 
     // Function to get the list of medications
     private fun getMedications(treatmentId: Int) {
+        // Clear the view
+        val medicationContainer = view?.findViewById<LinearLayout>(R.id.medicationContainer)
+        medicationContainer?.removeAllViews()
+
         val call = ApiManager.apiService.getTreatments()
         Log.d("Medications1", "Response is ${call}")
 
@@ -77,11 +86,13 @@ class MedicineFragment : Fragment() {
                             for (medication in treatment.medications!!){
                                 // Add the medicationRectangle to your UI
                                 addMedicationToUI(
-                                    medication.idTreatment,
+                                    medication.idMedication,
                                     medication.pName,
                                     medication.start_Time.substring(0, 10),
                                     medication.end_Time.substring(0, 10),
-                                    medication.timeUse.substring(11, 16)
+                                    medication.timeUse.substring(11, 16),
+                                    medication.mDescription,
+                                    medication.quantity,
                                 )
                             }
                             break
@@ -100,11 +111,13 @@ class MedicineFragment : Fragment() {
     }
 
     private fun addMedicationToUI(
-        idTreatment: Int,
+        medicationId: Int,
         name: String,
         start: String,
         end: String,
-        time: String
+        time: String,
+        mDescription: String,
+        quantity: Int
     ) {
         // Inflate the medication rectangle layout
         val medicationRectangle = layoutInflater.inflate(R.layout.medicine_item, null) as ConstraintLayout
@@ -113,10 +126,20 @@ class MedicineFragment : Fragment() {
         val medName = medicationRectangle.findViewById<TextView>(R.id.medName)
         val dates = medicationRectangle.findViewById<TextView>(R.id.dates)
         val hour = medicationRectangle.findViewById<TextView>(R.id.hour)
+        val description1 = medicationRectangle.findViewById<TextView>(R.id.description1)
+        val quantityView = medicationRectangle.findViewById<TextView>(R.id.quantity)
+
+        val editBtn = medicationRectangle.findViewById(R.id.editBtn) as ImageButton
+        editBtn.setTag(R.id.editBtn, medicationId)
+
+        val deleteButton = medicationRectangle.findViewById<ImageButton>(R.id.delBtn)
+        deleteButton.setTag(R.id.delBtn, medicationId)
 
         medName.text = name
         dates.text = "$start - $end"
         hour.text = time
+        description1.text = mDescription
+        quantityView.text = " " + quantity.toString() + " med."
 
         // Find your ScrollView (replace with the actual ID)
         val scrollView = view?.findViewById<ScrollView>(R.id.main_scroll_view)
@@ -125,6 +148,40 @@ class MedicineFragment : Fragment() {
         val medicationContainer = view?.findViewById<LinearLayout>(R.id.medicationContainer)
         medicationContainer?.addView(medicationRectangle)
 
+        deleteButton.setOnClickListener {
+            // Get the medicationId from the tag
+            val idMedication = it.getTag(R.id.delBtn) as Int
+            val idMedicationRemove = MedicationRemove(idMedication)
+            apiService.removeMedication(idMedicationRemove).enqueue(object : Callback<YourResponseModel> {
+                override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                    Log.d("removeMedication", "${response}")
+                }
+
+                override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
+                    // Handle network failure
+                    // You can show a network error message to the user
+                }
+            })
+            Thread.sleep(50)
+            getMedications(requireArguments().getInt("idTreatment"))
+        }
+
+        editBtn.setOnClickListener{
+            val idMedication = it.getTag(R.id.editBtn) as Int
+            navController.navigate(R.id.action_medicineFragment_to_addMedicineFragment,
+                bundleOf(
+                    "idTreatment" to requireArguments().getInt("idTreatment"),
+                    "tName" to requireArguments().getString("tName"),
+                    "idMedication" to idMedication,
+                    "name" to name,
+                    "description" to mDescription,
+                    "startTime" to start,
+                    "endTime" to end,
+                    "timeUse" to time,
+                    "quantity" to quantity,
+                    "goal" to "update")
+            )
+        }
     }
 
 

@@ -2,6 +2,8 @@ package com.example.medtracker.api
 
 import com.example.medtracker.data.LoginData
 import com.example.medtracker.data.MedicationPost
+import com.example.medtracker.data.MedicationRemove
+import com.example.medtracker.data.MedicationUpdate
 import com.example.medtracker.data.TreatmentListResponse
 import com.example.medtracker.data.TreatmentPost
 import com.example.medtracker.data.TreatmentRemove
@@ -21,6 +23,12 @@ interface ApiService {
 
     @POST("/Patient/AddMedication")
     fun addMedication(@Body medication: MedicationPost): Call<YourResponseModel>
+
+    @POST("/Patient/RemoveMedication")
+    fun removeMedication(@Body idMedication: MedicationRemove): Call<YourResponseModel>
+
+    @POST("/Patient/UpdateMedication")
+    fun updateMedication(@Body medication: MedicationUpdate): Call<YourResponseModel>
 
     @POST("/Patient/AddTreatment")
     fun addTreatment(@Body treatment: TreatmentPost): Call<YourResponseModel>

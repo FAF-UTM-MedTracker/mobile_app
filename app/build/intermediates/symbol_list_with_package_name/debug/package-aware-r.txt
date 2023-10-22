@@ -3235,10 +3235,12 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delBtn
 id delBtn1
 id deltaRelative
 id dependency_ordering
 id description
+id description1
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3267,6 +3269,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editBtn
 id editBtn1
 id edit_query
 id elastic
@@ -3347,6 +3350,7 @@ id linear
 id linearLayout
 id linearLayout2
 id linearLayout3
+id linearLayout4
 id linearLayoutBottom
 id listMode
 id list_item
@@ -3481,6 +3485,7 @@ id progress_circular
 id progress_horizontal
 id qty
 id qtyErr
+id quantity
 id radio
 id ratio
 id rectangles
