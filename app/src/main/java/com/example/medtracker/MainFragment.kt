@@ -58,14 +58,11 @@ class MainFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     val treatmentList = response.body()!!
-                    Log.d("treatmentList", "Response is ${treatmentList}")
-
                     val menuLayout = getView()?.findViewById(R.id.menu_layout) as LinearLayout
 
                     for (treatment in treatmentList) {
                         drawTreatment(treatment, menuLayout)
                     }
-                    Log.v("API Data", "Data: $treatmentList")
                 } else {
                     // Handle the error response
                 }
@@ -130,8 +127,9 @@ class MainFragment : Fragment() {
             val removeID = TreatmentRemove(treatment.idTreatment)
             apiService.removeTreatment(removeID).enqueue(object : Callback<YourResponseModel> {
                 override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                    Log.v("API response", response.toString())
                     if(response.isSuccessful){
-                        // TODO: Update the UI properly as treatment gets removed
+                        // No response from API...
                         (item.parent as ViewGroup).removeView(item)
                     }else{
                         // Show the error message somewhere...
@@ -140,6 +138,9 @@ class MainFragment : Fragment() {
 
                 override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
                     // Handle network failure
+                    //TODO: Discuss about API response, remove this patchwork solution
+                    (item.parent as ViewGroup).removeView(item)
+                    Log.v("API response", t.toString())
                 }
             })
         }

@@ -1,16 +1,28 @@
 package com.example.medtracker
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.medtracker.api.ApiManager
+import com.example.medtracker.api.YourResponseModel
+import com.example.medtracker.data.TreatmentListResponse
+import com.example.medtracker.data.TreatmentPost
+import com.example.medtracker.data.TreatmentUpdate
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.time.LocalDateTime
 
 /**
  * A simple [Fragment] subclass.
@@ -27,6 +39,7 @@ class TreatmentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+        val call = ApiManager.apiService.getTreatments()
 
         val backBtn = getView()?.findViewById<View>(R.id.backBtn) as ImageButton
         backBtn.setOnClickListener {
@@ -48,13 +61,73 @@ class TreatmentFragment : Fragment() {
 
             // Updating the Treatment and sending User back to main menu
             addBtn.setOnClickListener {
-                // TODO: Add Update API call
-                navController.navigate(R.id.action_treatmentFragment_to_mainFragment)
+                val treatmentName = getView()?.findViewById(R.id.treatmentName) as EditText
+                val doctorName = getView()?.findViewById(R.id.doctorName) as EditText
+                val treatmentDesc = getView()?.findViewById(R.id.description) as EditText
+
+                val treatment = TreatmentUpdate(
+                    requireArguments().getInt("idTreatment"),
+                    treatmentName.text.toString(),
+                    requireArguments().getString("startTime", LocalDateTime.now().toString()),
+                    requireArguments().getString("endTime", LocalDateTime.now().toString()),
+                    treatmentDesc.text.toString(),
+                    requireArguments().getInt("doctorID")
+                )
+                Log.v("Updating Treatment...", treatment.toString())
+
+                ApiManager.apiService.updateTreatment(treatment).enqueue(object : Callback<YourResponseModel> {
+                    override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                        Log.v("API Response", response.toString())
+                        if(response.code() in 200..299){
+                            // No response from API...
+                            //navController.navigate(R.id.action_treatmentFragment_to_mainFragment)
+                        }else{
+                            // Show the error message somewhere...
+                        }
+                    }
+
+                    override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
+                        // Handle network failure
+                        //TODO: Discuss about API response, remove this patchwork solution
+                        Log.v("API Response", t.toString())
+                        navController.navigate(R.id.action_treatmentFragment_to_mainFragment)
+                    }
+                })
             }
         }else{
             addBtn.setOnClickListener {
-                // TODO: Add Create API call
-                navController.navigate(R.id.action_treatmentFragment_to_medicineFragment)
+                //TODO: Clarify how to get DoctorID, replace hardcoded value 7
+                val treatmentName = getView()?.findViewById(R.id.treatmentName) as EditText
+                val doctorName = getView()?.findViewById(R.id.doctorName) as EditText
+                val treatmentDesc = getView()?.findViewById(R.id.description) as EditText
+
+                val treatment = TreatmentPost(
+                    treatmentName.text.toString(),
+                    LocalDateTime.now().toString(),
+                    LocalDateTime.now().toString(),
+                    treatmentDesc.text.toString(),
+                    7
+                )
+
+                ApiManager.apiService.addTreatment(treatment).enqueue(object : Callback<YourResponseModel> {
+                    override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                        if(response.code() in 200..299){
+                            /*navController.navigate(R.id.action_treatmentFragment_to_addMedicineFragment,
+                                bundleOf(
+                                    "idTreatment" to idTreatment, <- Getting this is problematic...
+                                    "tName" to treatmentName.text.toString(),
+                                )
+                            )*/
+                            navController.navigate(R.id.action_treatmentFragment_to_mainFragment)
+                        }else{
+                            // Show the error message somewhere...
+                        }
+                    }
+
+                    override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
+                        // Handle network failure
+                    }
+                })
             }
         }
     }

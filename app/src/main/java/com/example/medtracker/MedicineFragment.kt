@@ -41,13 +41,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class MedicineFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private  lateinit var navController: NavController
+    private lateinit var navController: NavController
     private val apiService = ApiManager.apiService
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

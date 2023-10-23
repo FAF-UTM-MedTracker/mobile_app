@@ -55,8 +55,7 @@
             app:destination="@id/treatmentFragment" />
         <action
             android:id="@+id/action_mainFragment_to_medicineFragment"
-            app:destination="@id/medicineFragment">
-        </action>
+            app:destination="@id/medicineFragment" />
     </fragment>
     <fragment
         android:id="@+id/treatmentFragment"
@@ -69,10 +68,8 @@
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_treatmentFragment_to_medicineFragment"
-            app:destination="@id/medicineFragment"
-            app:popUpTo="@id/mainFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_treatmentFragment_to_addMedicineFragment"
+            app:destination="@id/addMedicineFragment" />
     </fragment>
     <fragment
         android:id="@+id/medicineFragment"
@@ -94,5 +91,8 @@
         <action
             android:id="@+id/action_addMedicineFragment_to_medicineFragment"
             app:destination="@id/medicineFragment" />
+        <action
+            android:id="@+id/action_addMedicineFragment_to_treatmentFragment"
+            app:destination="@id/treatmentFragment" />
     </fragment>
 </navigation>

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
@@ -19,6 +20,8 @@ import com.example.medtracker.api.ApiManager
 import com.example.medtracker.api.YourResponseModel
 import com.example.medtracker.data.MedicationPost
 import com.example.medtracker.data.MedicationUpdate
+import com.example.medtracker.data.TreatmentListResponse
+import com.example.medtracker.data.TreatmentUpdate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,6 +31,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 
@@ -45,12 +49,6 @@ class AddMedicineFragment : Fragment() {
     private lateinit var navController: NavController
     private val apiService = ApiManager.apiService
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
@@ -132,11 +130,72 @@ class AddMedicineFragment : Fragment() {
                         }
                     }
                 }
+
+                //Update the treatment's Start and End times too, if needed
+                ApiManager.apiService.getTreatments().enqueue(object : Callback<List<TreatmentListResponse>> {
+                    override fun onResponse(call: Call<List<TreatmentListResponse>>,
+                                            response: Response<List<TreatmentListResponse>>
+                    ) {
+                        if (response.isSuccessful) {
+                            val treatmentList = response.body()!!
+
+                            for (treatment in treatmentList) {
+                                if(treatment.idTreatment == idTreatment){
+                                    updateTreatment(treatment)
+                                    break
+                                }
+                            }
+                        } else {
+                            // Handle the error response
+                        }
+                    }
+
+                    override fun onFailure(call: Call<List<TreatmentListResponse>>, t: Throwable) {}
+                })
             }
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+    private fun updateTreatment(treatment: TreatmentListResponse){
+        //updateTreatment(treatment, startDate, endDate)
+        var minTime = LocalDate.parse("9999-12-30")
+        var maxTime = LocalDate.parse("1000-01-01")
+        for (medicine in treatment.medications!!){
+            var targetDate = LocalDate.parse(medicine.start_Time.substring(0, 10))
+            var delta = minTime.until(targetDate, ChronoUnit.DAYS)
+            if(delta < 0){
+                minTime = targetDate
+            }
+
+            targetDate = LocalDate.parse(medicine.end_Time.substring(0, 10))
+            delta = maxTime.until(targetDate, ChronoUnit.DAYS)
+            if(delta > 0){
+                maxTime = targetDate
+            }
+        }
+
+        var tUpdate = TreatmentUpdate(
+            treatment.idTreatment,
+            treatment.tName,
+            minTime.toString()+"T00:00:00",
+            maxTime.toString()+"T00:00:00",
+            treatment.notePatient,
+            treatment.doctorID
+        )
+
+        ApiManager.apiService.updateTreatment(tUpdate).enqueue(object : Callback<YourResponseModel> {
+            override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                if(response.code() in 200..299){
+                    // Success!
+                }else{
+                    // Show the error message somewhere...
+                }
+            }
+
+            override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {}
+        })
+    }
+
     private fun checkInput(view: View): Boolean {
         var retVal = true
         val medName = (getView()?.findViewById<View>(R.id.medicationName) as EditText).text.toString()
