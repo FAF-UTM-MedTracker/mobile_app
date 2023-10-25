@@ -67,31 +67,7 @@ class SignUpFragment : Fragment() {
                         if (response.isSuccessful){
                             val responseBody = response.body()
                             if (responseBody != null && responseBody.message == "Registration successful") {
-
-                                val loginData = LoginData(mail, pass)
-                                apiService.login(loginData).enqueue(object : Callback<YourResponseModel> {
-                                    override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
-                                        if (response.isSuccessful) {
-                                            val responseBody = response.body()
-
-                                            if (responseBody != null && responseBody.message == "Authententication succedeed.") {
-                                                val bearerToken = responseBody.jwt
-                                                Log.d("bearerToken sign up", "Message: ${bearerToken}")
-
-                                                val sharedPreferences = requireActivity().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
-                                                val editor = sharedPreferences.edit()
-                                                editor.remove("bearerToken")
-                                                editor.putString("bearerToken", bearerToken)
-                                                editor.apply()
-
-                                                navController.navigate(R.id.action_signUpFragment_to_mainFragment)
-                                            }
-                                        }
-                                    }
-                                    override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
-                                        // Handle network failure
-                                    }
-                                })
+                                navController.navigate(R.id.action_signUpFragment_to_logInFragment)
                             }
                         } else {
                             val errorBody = response.errorBody()?.string()

@@ -63,9 +63,9 @@ class LogInFragment : Fragment() {
                             if (responseBody != null && responseBody.message == "Authententication succedeed.") {
                                 val bearerToken = responseBody.jwt
                                 Log.d("bearerToken", "Message: ${bearerToken}")
-
                                 val sharedPreferences = requireActivity().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
                                 val editor = sharedPreferences.edit()
+                                // editor.remove("bearerToken")
                                 editor.putString("bearerToken", bearerToken)
                                 editor.apply()
 
