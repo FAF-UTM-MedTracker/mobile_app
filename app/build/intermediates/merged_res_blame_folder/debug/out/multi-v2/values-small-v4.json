@@ -4,7 +4,7 @@
             "outputFile": "com.example.medtracker.app-mergeDebugResources-46:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\RandomNick\\.gradle\\caches\\transforms-3\\f5f3672d669267e2fcfadb865223b045\\transformed\\material-1.9.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "/Users/air/.gradle/caches/transforms-3/f5f3672d669267e2fcfadb865223b045/transformed/material-1.9.0/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

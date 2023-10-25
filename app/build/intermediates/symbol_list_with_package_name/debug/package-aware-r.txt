@@ -3122,7 +3122,6 @@ id actionDown
 id actionDownUp
 id actionUp
 id action_addMedicineFragment_to_medicineFragment
-id action_addMedicineFragment_to_treatmentFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -3150,7 +3149,6 @@ id action_signUpFragment_to_mainFragment
 id action_startFragment_to_logInFragment
 id action_startFragment_to_signUpFragment
 id action_text
-id action_treatmentFragment_to_addMedicineFragment
 id action_treatmentFragment_to_mainFragment
 id actions
 id activity_chooser_view_content

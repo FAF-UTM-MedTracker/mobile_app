@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.medtracker.api.ApiManager
+import com.example.medtracker.api.LoginApiManager
 import com.example.medtracker.api.YourResponseModel
 import com.example.medtracker.data.UserData
 import retrofit2.Call
@@ -24,7 +25,7 @@ import retrofit2.Response
  */
 class SignUpFragment : Fragment() {
     private lateinit var navController: NavController
-    private val apiService = ApiManager.apiService
+    private val apiService = LoginApiManager.apiService
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
