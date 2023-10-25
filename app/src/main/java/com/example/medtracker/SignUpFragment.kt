@@ -1,6 +1,8 @@
 package com.example.medtracker
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,7 @@ import androidx.navigation.Navigation
 import com.example.medtracker.api.ApiManager
 import com.example.medtracker.api.LoginApiManager
 import com.example.medtracker.api.YourResponseModel
+import com.example.medtracker.data.LoginData
 import com.example.medtracker.data.UserData
 import retrofit2.Call
 import retrofit2.Callback
@@ -64,7 +67,31 @@ class SignUpFragment : Fragment() {
                         if (response.isSuccessful){
                             val responseBody = response.body()
                             if (responseBody != null && responseBody.message == "Registration successful") {
-                                navController.navigate(R.id.action_signUpFragment_to_mainFragment)
+
+                                val loginData = LoginData(mail, pass)
+                                apiService.login(loginData).enqueue(object : Callback<YourResponseModel> {
+                                    override fun onResponse(call: Call<YourResponseModel>, response: Response<YourResponseModel>) {
+                                        if (response.isSuccessful) {
+                                            val responseBody = response.body()
+
+                                            if (responseBody != null && responseBody.message == "Authententication succedeed.") {
+                                                val bearerToken = responseBody.jwt
+                                                Log.d("bearerToken sign up", "Message: ${bearerToken}")
+
+                                                val sharedPreferences = requireActivity().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
+                                                val editor = sharedPreferences.edit()
+                                                editor.remove("bearerToken")
+                                                editor.putString("bearerToken", bearerToken)
+                                                editor.apply()
+
+                                                navController.navigate(R.id.action_signUpFragment_to_mainFragment)
+                                            }
+                                        }
+                                    }
+                                    override fun onFailure(call: Call<YourResponseModel>, t: Throwable) {
+                                        // Handle network failure
+                                    }
+                                })
                             }
                         } else {
                             val errorBody = response.errorBody()?.string()

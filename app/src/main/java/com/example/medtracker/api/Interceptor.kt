@@ -20,7 +20,7 @@ class AuthInterceptor() : Interceptor {
 
     fun getBearerToken(): String {
         val sharedPreferences = YourApplicationClass.getContext().getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE)
-        Log.d("APIIIIII Response", "Message: ${sharedPreferences.getString("bearerToken", "") ?: ""}")
+        Log.d("Bearer", "Message: ${sharedPreferences.getString("bearerToken", "") ?: ""}")
         return sharedPreferences.getString("bearerToken", "") ?: ""
     }
 }
