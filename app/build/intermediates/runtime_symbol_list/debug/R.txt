@@ -2086,6 +2086,7 @@ int color secondary_text_default_material_dark 0x7f0502df
 int color secondary_text_default_material_light 0x7f0502e0
 int color secondary_text_disabled_material_dark 0x7f0502e1
 int color secondary_text_disabled_material_light 0x7f0502e2
+int color soft_error 0x7f0502ee
 int color switch_thumb_disabled_material_dark 0x7f0502e3
 int color switch_thumb_disabled_material_light 0x7f0502e4
 int color switch_thumb_material_dark 0x7f0502e5
@@ -3636,9 +3637,11 @@ int id transition_position 0x7f080234
 int id transition_scene_layoutid_cache 0x7f080235
 int id transition_transform 0x7f080236
 int id treat1 0x7f080237
+int id treatmentErr 0x7f080254
 int id treatmentFragment 0x7f080238
 int id treatmentName 0x7f080239
 int id treatmentName1 0x7f08023a
+int id treatmentNote1 0x7f080255
 int id treatmentTitle 0x7f08023b
 int id triangle 0x7f08023c
 int id unchecked 0x7f08023d

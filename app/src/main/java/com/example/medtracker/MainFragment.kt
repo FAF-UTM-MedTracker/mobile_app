@@ -1,5 +1,6 @@
 package com.example.medtracker
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -81,11 +83,22 @@ class MainFragment : Fragment() {
         val nextName = item.findViewById(R.id.nextMed1) as TextView
         val itemDates = item.findViewById(R.id.dates1) as TextView
         val itemHour = item.findViewById(R.id.hour1) as TextView
+        var itemDesc = item.findViewById(R.id.treatmentNote1) as TextView
         val editBtn = item.findViewById(R.id.editBtn1) as ImageButton
         val delBtn = item.findViewById(R.id.delBtn1) as ImageButton
 
         itemName.text = treatment.tName
         itemDates.text = "Duration: " + treatment.start_Time.substring(0, 10) + " - " + treatment.end_Time.substring(0, 10)
+
+        if(treatment.notePatient.length > 80){
+            itemDesc.text = treatment.notePatient.substring(0,77) + "..."
+        }else {
+            itemDesc.text = treatment.notePatient
+        }
+
+        if(treatment.statusTreatment != "Accepted"){
+            (item.findViewById(R.id.treat1) as ConstraintLayout).setBackgroundColor(Color.parseColor("#ffeeee"))
+        }
 
         var minHour = 9999999999
         var targetHour = "00:00"

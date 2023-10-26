@@ -1,5 +1,6 @@
 package com.example.medtracker.api
 
+import com.example.medtracker.data.DoctorResponse
 import com.example.medtracker.data.LoginData
 import com.example.medtracker.data.MedicationPost
 import com.example.medtracker.data.MedicationRemove
@@ -43,4 +44,7 @@ interface ApiService {
 
     @GET("/Patient/GetTreatments")
     fun getTreatments(): Call<List<TreatmentListResponse>>
+
+    @GET("/Patient/GetDoctors")
+    fun getDoctors(): Call<List<DoctorResponse>>
 }

@@ -1,166 +1,166 @@
 [
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_activity_main.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/activity_main.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_fragment_main.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\fragment_main.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_fragment_sign_up.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\fragment_sign_up.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_edit_text_background.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/edit_text_background.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_fragment_treatment.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\fragment_treatment.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_switch_outline.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/switch_outline.xml"
+        "merged": "com.example.medtracker.app-merged_res-48:/layout_fragment_treatment.xml.flat",
+        "source": "com.example.medtracker.app-main-50:/layout/fragment_treatment.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_fragment_main.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/fragment_main.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\navigation\\nav_graph.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/xml_data_extraction_rules.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\activity_main.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_baseline_lock_24.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/baseline_lock_24.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_baseline_email_24.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\baseline_email_24.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_background_start.jpg.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/background_start.jpg"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_fragment_log_in.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/fragment_log_in.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/navigation_nav_graph.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/navigation/nav_graph.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_plus_large_svgrepo_com.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\plus_large_svgrepo_com.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_plus_large_svgrepo_com.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/plus_large_svgrepo_com.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_medicine_item.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/medicine_item.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/xml_backup_rules.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_trash_xmark_alt_svgrepo_com.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\trash_xmark_alt_svgrepo_com.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_settings_cog_line_svgrepo_com.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/settings_cog_line_svgrepo_com.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_medicine_item.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\medicine_item.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_back_svgrepo_com.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/back_svgrepo_com.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable__45546947.png.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\_45546947.png"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_back_svgrepo_com.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\back_svgrepo_com.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_treatment_template.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/treatment_template.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_fragment_medicine.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\fragment_medicine.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_baseline_email_24.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/baseline_email_24.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_treatment_template.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\treatment_template.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_fragment_sign_up.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/fragment_sign_up.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_settings_cog_line_svgrepo_com.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\settings_cog_line_svgrepo_com.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_fragment_medicine.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/fragment_medicine.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable__45546947.png.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/_45546947.png"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_fragment_treatment.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/fragment_treatment.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_edit_svgrepo_com.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\edit_svgrepo_com.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_edit_svgrepo_com.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/edit_svgrepo_com.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_baseline_lock_24.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\baseline_lock_24.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_background_start.jpg.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\background_start.jpg"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_fragment_start.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\fragment_start.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_baseline_arrow_back_ios_24.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/baseline_arrow_back_ios_24.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_switch_outline.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\switch_outline.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_trash_xmark_alt_svgrepo_com.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/trash_xmark_alt_svgrepo_com.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_edit_text_background.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\edit_text_background.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_fragment_add_medicine.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/fragment_add_medicine.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_toggle_widget_background.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\toggle_widget_background.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_ic_launcher_background.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_fragment_add_medicine.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\fragment_add_medicine.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/layout_fragment_start.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/layout/fragment_start.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\layout_fragment_log_in.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\layout\\fragment_log_in.xml"
     },
     {
-        "merged": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-merged_res-48:/drawable_toggle_widget_background.xml.flat",
-        "source": "/Users/air/.gradle/daemon/8.0/com.example.medtracker.app-main-50:/drawable/toggle_widget_background.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\drawable_baseline_arrow_back_ios_24.xml.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\drawable\\baseline_arrow_back_ios_24.xml"
     },
     {
-        "merged": "com.example.medtracker.app-merged_res-48:/navigation_nav_graph.xml.flat",
-        "source": "com.example.medtracker.app-main-50:/navigation/nav_graph.xml"
+        "merged": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-merged_res-48:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\RandomNick\\.gradle\\daemon\\8.0\\com.example.medtracker.app-main-50:\\mipmap-xxxhdpi\\ic_launcher.webp"
     }
 ]

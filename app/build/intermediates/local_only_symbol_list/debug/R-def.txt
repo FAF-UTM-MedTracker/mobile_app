@@ -7,6 +7,7 @@ color edit_text_background
 color edit_text_border
 color error
 color gray
+color soft_error
 color transparent
 color warning
 color white
@@ -115,9 +116,11 @@ id textView6
 id timeInput
 id titleMain
 id treat1
+id treatmentErr
 id treatmentFragment
 id treatmentName
 id treatmentName1
+id treatmentNote1
 id treatmentTitle
 layout activity_main
 layout fragment_add_medicine

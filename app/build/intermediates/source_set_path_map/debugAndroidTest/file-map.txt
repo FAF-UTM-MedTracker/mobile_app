@@ -1,0 +1,6 @@
+com.example.medtracker.test.app-core-1.5.0-0 C:\Users\RandomNick\.gradle\caches\transforms-3\a7e379b06b3ca6ccee1e138a8ff0e461\transformed\core-1.5.0\res
+com.example.medtracker.test.app-annotation-experimental-1.3.0-1 C:\Users\RandomNick\.gradle\caches\transforms-3\c0fcb886e297b91b746c5514ee4e86cd\transformed\annotation-experimental-1.3.0\res
+com.example.medtracker.test.app-androidTest-2 C:\Users\RandomNick\Desktop\mobile_app-main\app\build\generated\res\resValues\androidTest\debug
+com.example.medtracker.test.app-mergeDebugAndroidTestResources-3 C:\Users\RandomNick\Desktop\mobile_app-main\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.medtracker.test.app-mergeDebugAndroidTestResources-4 C:\Users\RandomNick\Desktop\mobile_app-main\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.medtracker.test.app-merged_res-5 C:\Users\RandomNick\Desktop\mobile_app-main\app\build\intermediates\merged_res\debugAndroidTest
